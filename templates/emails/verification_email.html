@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BingeKai - Verify Your Email</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      background-color: #030303;
+      font-family: 'Inter', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #030303;
+      padding: 40px 0;
+    }
+
+    .email-container {
+      max-width: 520px;
+      background: #111111;
+      margin: 0 auto;
+      border-radius: 24px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo-accent {
+      color: #22c55e;
+    }
+
+    .logo-badge {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .badge-text {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .otp-wrapper {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .otp-container {
+      display: inline-block;
+      background: #000000;
+      border: 1px solid #22c55e;
+      border-radius: 16px;
+      padding: 20px 30px;
+    }
+
+    .otp-code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 48px;
+      font-weight: 800;
+      color: #22c55e;
+      letter-spacing: 10px;
+      line-height: 1;
+    }
+
+    .otp-expiry {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .expiry-badge {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    /* Information Section - Aligned */
+    .info-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 30px 0;
+    }
+
+    .info-title {
+      color: #22c55e;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .info-list {
+      margin: 0 auto;
+      max-width: 400px; /* Constrain width to keep bullet list neat */
+    }
+
+    .info-item {
+      display: table; /* Maintains alignment on multi-line text */
+      color: #d1d5db;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .bullet {
+      display: table-cell;
+      width: 20px;
+      color: #22c55e;
+      font-weight: bold;
+      vertical-align: top;
+    }
+
+    .info-content {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .footer {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+    }
+
+    .copyright {
+      font-size: 11px;
+      color: #4b5563;
+      letter-spacing: 0.5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .email-container {
+        margin: 0 15px !important;
+        padding: 30px 20px !important;
+      }
+      .otp-code {
+        font-size: 36px !important;
+        letter-spacing: 6px !important;
+      }
+      .title {
+        font-size: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="email-container">
+      
+      <div class="logo">
+        BINGE<span class="logo-accent">KAI</span>
+      </div>
+      <div class="logo-badge">
+        <span class="badge-text">✦ Verified Platform ✦</span>
+      </div>
+
+      <div class="header">
+        <h1 class="title">Verify Your Email</h1>
+        <p class="subtitle">Enter the code below to finalize your account setup and start your journey.</p>
+      </div>
+
+      <div class="otp-wrapper">
+        <div class="otp-container">
+          <div class="otp-code">{{ otp }}</div>
+        </div>
+        <div class="otp-expiry">
+          ⏱️ Code expires in <span class="expiry-badge">10 minutes</span>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-title">Security Notice</div>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="bullet">•</span>
+            <span class="info-content">This code is valid for a single use only.</span>
+          </div>
+          <div class="info-item">
+            <span class="bullet">•</span>
+            <span class="info-content">If you did not request this, please ignore this email or secure your account.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="copyright">
+          &copy; 2026 BingeKai. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
